@@ -1,0 +1,13 @@
+name: Kingdoms+
+
+author: lucasGithuber
+
+description: for a server
+
+
+main: me.lucasgithuber.kingdoms.Kingdoms
+
+version: ${project.version}
+
+## This is the minimum minecraft version required to run your plugin.
+api-version: 1.18
