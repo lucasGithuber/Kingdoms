@@ -6,10 +6,10 @@ import java.io.*;
 public class Kingdoms extends JavaPlugin {
     @Override
     public void onEnable(){
-        System.out.printLn("Enabling plugin...");
+        System.out.println("Enabling plugin...");
     }
 
     public void onDisable(){
-        System.out.printLn("Disabling plugin...");
+        System.out.println("Disabling plugin...");
     }
 }
