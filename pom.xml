@@ -43,7 +43,7 @@
     <build>
         <finalName>${project.name} v${project.version}</finalName>
         <defaultGoal>clean package</defaultGoal>
-        <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
+        <sourceDirectory>${basedir}/src/main/me</sourceDirectory>
 
         <resources>
             <resource>
@@ -65,14 +65,14 @@
                     <relocations>
                         <relocation>
                             <pattern>net.kyori.adventure</pattern>
-                            <shadedPattern>me.lucasgithuber.elementmanipulation.adventure</shadedPattern>
+                            <shadedPattern>me.lucasgithuber.kingdoms.adventure</shadedPattern>
                         </relocation>
                         <relocation>
                             <pattern>net.kyori.examination</pattern>
-                            <shadedPattern>me.lucasgithuber.elementmanipulation.examination</shadedPattern>
+                            <shadedPattern>me.lucasgithuber.kingdoms.examination</shadedPattern>
                         </relocation><relocation>
                         <pattern>net.kyori.platform.bukkit</pattern>
-                        <shadedPattern>me.lucasgithuber.elementmanipulation.platform.bukkit</shadedPattern>
+                        <shadedPattern>me.lucasgithuber.kingdoms.platform.bukkit</shadedPattern>
                     </relocation>
                     </relocations>
                     <filters>
