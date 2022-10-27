@@ -1,4 +1,4 @@
-package me.lucasgithuber;
+package me.lucasgithuber.kingdoms;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

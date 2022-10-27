@@ -4,7 +4,7 @@ author: lucasGithuber
 
 description: for a server
 
-main: me.lucasgithuber.kingdoms
+main: me.lucasgithuber.kingdoms.Kingdoms
 
 version: ${project.version}
 
