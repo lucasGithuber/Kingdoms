@@ -6,7 +6,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class TutorialCommands implements CommandExecutor {
+public class GiveCrown implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -15,7 +15,7 @@ public class TutorialCommands implements CommandExecutor {
             return true;
         }
         Player player = (Player) sender;
-        if (cmd.getName().equalsIgnoreCase("givewand")) {
+        if (cmd.getName().equalsIgnoreCase("givecrown")) {
             player.getInventory().addItem(Crown.crown);
         }
 
