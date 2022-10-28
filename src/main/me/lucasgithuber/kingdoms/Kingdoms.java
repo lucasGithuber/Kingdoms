@@ -1,7 +1,8 @@
 package me.lucasgithuber.kingdoms;
 
 import org.bukkit.plugin.java.JavaPlugin;
-import me.lucasgithuber.kingdoms.listeners.*;
+import me.lucasgithuber.kingdoms.listeners.CrownTrailTask;
+import me.lucasgithuber.kingdoms.listeners.CrownTrailManager;
 import java.io.*;
 
 public class Kingdoms extends JavaPlugin {
