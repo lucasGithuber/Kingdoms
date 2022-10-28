@@ -33,7 +33,6 @@ public class CrownTrailTask extends BukkitRunnable {
             return;
         }
         if(player.getInventory().getHelmet().equals(Crown.crown.getItemMeta())){
-        Bukkit.getLogger().info("Particled");
         double radians = Math.toRadians(degree);
         double x = Math.cos(radians) * radius;
         double y = Math.sin(radians * waves) * height;
