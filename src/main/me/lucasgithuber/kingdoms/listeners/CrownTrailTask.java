@@ -1,3 +1,5 @@
+package me.lucasgithuber.listeners;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Particle;

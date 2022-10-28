@@ -1,3 +1,5 @@
+package me.lucasgithuber.listeners;
+
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
