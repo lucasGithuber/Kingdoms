@@ -6,7 +6,7 @@ import java.io.*;
 
 public class Kingdoms extends JavaPlugin {
 
-    private final CrownTrailManager crownTrailManager = new CrownTrailManager()
+    private final CrownTrailManager crownTrailManager = new CrownTrailManager();
 
     @Override
     public void onEnable(){
