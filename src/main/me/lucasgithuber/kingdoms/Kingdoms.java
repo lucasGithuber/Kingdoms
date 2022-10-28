@@ -16,9 +16,9 @@ public class Kingdoms extends JavaPlugin {
     @Override
     public void onEnable(){
         Crown.init();
-        getCommand("givecrown").setExecutor(new GiveCrown());
         Bukkit.getLogger().info("Enabling...");
         Bukkit.getScheduler().runTaskTimer(this, crownTrailManager, 1, 1);
+        getCommand("givecrown").setExecutor(new GiveCrown());
     }
     
     @Override

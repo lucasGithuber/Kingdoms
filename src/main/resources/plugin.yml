@@ -10,3 +10,7 @@ version: ${project.version}
 
 ## This is the minimum minecraft version required to run your plugin.
 api-version: 1.18
+
+commands:
+  givecrown:
+    description: gives crown that makes particles
