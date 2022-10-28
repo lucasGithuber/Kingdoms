@@ -11,11 +11,11 @@ public class Kingdoms extends JavaPlugin {
 
     @Override
     public void onEnable(){
-        JavaPlugin.getLogger("Enabling...");
+        JavaPlugin.getLogger().log(Level.INFO, "Enabling...");
         Bukkit.getScheduler().runTaskTimer(this, crownTrailManager, 1, 1);
     }
 
     public void onDisable(){
-        JavaPlugin.getLogger("Disabling...");
+        JavaPlugin.getLogger().log(Level.INFO, "Disabling...");
     }
 }
