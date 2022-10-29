@@ -25,7 +25,7 @@ public class CrownTrailTask extends BukkitRunnable {
 @Override
     public void run() {
         for (Player p : Bukkit.getServer().getOnlinePlayers()) {
-            makeParticleSinCircle(2, 8, 2);
+            makeWave(2, 8, 2);
         }
     }
 
