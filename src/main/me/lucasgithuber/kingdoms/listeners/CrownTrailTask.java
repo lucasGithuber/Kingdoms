@@ -32,7 +32,6 @@ public class CrownTrailTask extends BukkitRunnable {
             this.cancel();
             return;
         }
-        if(player.getInventory().getHelmet().equals(Crown.crown.getItemMeta())){
         double radians = Math.toRadians(degree);
         double x = Math.cos(radians) * radius;
         double y = (Math.cos(1.7*radians)-Math.cos((1.7/2)*radians))*2+3;
@@ -40,7 +39,6 @@ public class CrownTrailTask extends BukkitRunnable {
         Location particleLoc = player.getLocation().add(x, y+2, z);
         player.getWorld().spawnParticle(Particle.END_ROD, particleLoc, 0);
         degree += 5;
-        }
     }
 
 }
