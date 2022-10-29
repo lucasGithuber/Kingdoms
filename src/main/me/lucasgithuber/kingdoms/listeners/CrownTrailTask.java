@@ -43,6 +43,6 @@ public class CrownTrailTask extends BukkitRunnable {
             Location particleLoc = player.getLocation().add(x, y+2, z);
             player.getWorld().spawnParticle(Particle.END_ROD, particleLoc, 0);
             degree += 5;
+            }
     }
-
 }
