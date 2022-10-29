@@ -10,7 +10,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import java.util.UUID;
 
 public class CrownTrailTask extends BukkitRunnable {
-    
+
     private final int waves;
     private final double height;
     private final double radius;
@@ -24,7 +24,7 @@ public class CrownTrailTask extends BukkitRunnable {
 @Override
     public void run() {
         for (Player p : Bukkit.getServer().getOnlinePlayers()) {
-            makeWave(2, 8, 2);
+            makeWave(radius, waves, height);
         }
     }
 
@@ -36,10 +36,10 @@ public class CrownTrailTask extends BukkitRunnable {
             }
             double radians = Math.toRadians(degree);
             double x = Math.cos(radians) * radius;
-            double y = (Math.cos(1.7*radians)-Math.cos((1.7/2)*radians))*height+3;
+            double y = 1;
             double z = Math.sin(radians) * radius;
-            Location particleLoc = player.getLocation().add(x, y+2, z);
-            player.getWorld().spawnParticle(Particle.END_ROD, particleLoc, 0);
+            Location particleLoc = player.getLocation().add(x, y, z);
+            player.getWorld().spawnParticle(Particle.END_ROD, particleLoc, 1);
             degree += 5;
             }
     }
