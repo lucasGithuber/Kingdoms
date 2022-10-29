@@ -31,9 +31,6 @@ public class CrownTrailTask extends BukkitRunnable {
     public void makeWave(double radius, int waves, double height){
         degree %= 360;
         for (Player player : Bukkit.getOnlinePlayers()) {
-            if (!player.isValid() || player.isDead()) {
-                continue;
-            }
             double radians = Math.toRadians(degree);
             double x = Math.cos(radians) * radius;
             double y = 1;
@@ -42,6 +39,6 @@ public class CrownTrailTask extends BukkitRunnable {
             player.getWorld().spawnParticle(Particle.END_ROD, particleLoc, 1);
             Bukkit.getLogger().info("particle");
             degree += 5;
-            }
+        }
     }
 }
