@@ -25,6 +25,7 @@ public class CrownTrailManager implements Runnable {
     @Override
     public void run() {
         runningTasks.values().forEach(CrownTrailTask::run);
+        Bukkit.getLogger().info("running manager");
     }
 
 }

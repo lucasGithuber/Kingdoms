@@ -21,10 +21,10 @@ public class CrownTrailTask extends BukkitRunnable {
         this.height = height;
         this.radius = radius;
     }
-@Override
+    @Override
     public void run() {
-            makeWave(radius, waves, height);
-            Bukkit.getLogger().info("running");
+        Bukkit.getLogger().info("running");
+        makeWave(radius, waves, height);
     }
 
     public void makeWave(double radius, int waves, double height){
