@@ -2,6 +2,7 @@ package me.lucasgithuber.kingdoms.listeners;
 
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.Bukkit;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,10 +14,12 @@ public class CrownTrailManager implements Runnable {
 
     public void startTask(Player player) {
         runningTasks.put(player, new CrownTrailTask(2, 8, 2));
+        Bukkit.getLogger().info("started task");
     }
 
     public void stopTask(Player player) {
         Optional.ofNullable(runningTasks.get(player)).ifPresent(BukkitRunnable::cancel);
+        Bukkit.getLogger().info("stopped task");
     }
 
     @Override
