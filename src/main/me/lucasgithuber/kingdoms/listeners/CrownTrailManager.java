@@ -13,7 +13,6 @@ public class CrownTrailManager implements Runnable {
     private final Map<Player, CrownTrailTask> runningTasks = new HashMap<>();
 
     public void startTask(Player player) {
-        runningTasks.put(player, new CrownTrailTask(2, 8, 2));
         Bukkit.getLogger().info("started task");
     }
 
@@ -24,6 +23,7 @@ public class CrownTrailManager implements Runnable {
 
     @Override
     public void run() {
+        runningTasks.put(player, new CrownTrailTask(2, 8, 2));
         runningTasks.values().forEach(CrownTrailTask::run);
         Bukkit.getLogger().info("running manager");
     }
