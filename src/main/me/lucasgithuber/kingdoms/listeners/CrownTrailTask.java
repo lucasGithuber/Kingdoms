@@ -28,8 +28,7 @@ public class CrownTrailTask extends BukkitRunnable {
             makeWave(2, 8, 2);
         }
     }
-
-    @Override
+    
     public void makeWave(double radius, int waves, double height){
         degree %= 360;
         for (Player player : Bukkit.getOnlinePlayers()) {
