@@ -10,8 +10,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import java.util.UUID;
 
 public class CrownTrailTask extends BukkitRunnable {
-
-    private final UUID playerID;
+    
     private final int waves;
     private final double height;
     private final double radius;
@@ -28,7 +27,7 @@ public class CrownTrailTask extends BukkitRunnable {
             makeWave(2, 8, 2);
         }
     }
-    
+
     public void makeWave(double radius, int waves, double height){
         degree %= 360;
         for (Player player : Bukkit.getOnlinePlayers()) {
