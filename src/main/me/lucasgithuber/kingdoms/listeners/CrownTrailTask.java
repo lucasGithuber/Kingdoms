@@ -2,6 +2,7 @@ package me.lucasgithuber.kingdoms.listeners;
 
 import me.lucasgithuber.kingdoms.items.Crown;
 import org.bukkit.Bukkit;
+import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.Particle;
 import org.bukkit.entity.Player;
@@ -29,13 +30,14 @@ public class CrownTrailTask extends BukkitRunnable {
 
     public void makeWave(double radius, int waves, double height){
         degree %= 360;
+        Particle.DustOptions crownColors = new Particle.DustTransition(Color.YELLOW, Color.fromRGB(255, 208, 0), 1.0F);
         for (Player player : Bukkit.getOnlinePlayers()) {
             double radians = Math.toRadians(degree);
             double x = Math.cos(radians) * radius;
-            double y = 1;
+            double y = (Math.cos(1.7*radians)-Math.cos((1.7/2)*radians))*height+3;
             double z = Math.sin(radians) * radius;
             Location particleLoc = player.getLocation().add(x, y, z);
-            player.getWorld().spawnParticle(Particle.END_ROD, particleLoc, 1);
+            player.getWorld().spawnParticle(Particle.DUST_COLOR_TRANSITION, particleLoc, 1, crownColors);
             Bukkit.getLogger().info("particle");
             degree += 5;
         }
