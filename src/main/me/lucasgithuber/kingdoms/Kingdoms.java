@@ -21,7 +21,7 @@ public class Kingdoms extends JavaPlugin {
         Crown.init();
         Bukkit.getLogger().info("Enabling...");
 
-        CrownTrailManager.runTaskTimer(this, 3, 1);
+        Bukkit.getScheduler().runTaskTimer(this, crownTrailManager, 3, 1);
         for(Player player : Bukkit.getOnlinePlayers()){
         crownTrailManager.startTask(player);
         }
