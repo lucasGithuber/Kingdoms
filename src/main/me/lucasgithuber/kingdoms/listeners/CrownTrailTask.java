@@ -27,8 +27,8 @@ public class CrownTrailTask extends BukkitRunnable {
     }
 
     public void makeWave(double radius, int waves, double height){
+        degree%=360;
         Particle.DustOptions crownColors = new Particle.DustTransition(Color.YELLOW, Color.fromRGB(255, 208, 0), 1.0F);
-        if(degree<360){
         for (Player player : Bukkit.getOnlinePlayers()) {
             double radians = Math.toRadians(degree);
             double x = Math.cos(radians) * radius;
@@ -36,10 +36,9 @@ public class CrownTrailTask extends BukkitRunnable {
             double z = Math.sin(radians) * radius;
             Location particleLoc = player.getLocation().add(x, y, z);
             player.getWorld().spawnParticle(Particle.DUST_COLOR_TRANSITION, particleLoc, 1, crownColors);
+
+            degree+=5
             }
-            degree+=5;
-        }else{
-            degree=0;
         }
     }
 }
