@@ -13,7 +13,6 @@ public class CrownTrailManager implements Runnable {
     private final Map<Player, CrownTrailTask> runningTasks = new HashMap<>();
 
     public void startTask(Player player) {
-                runningTasks.put(player, new CrownTrailTask(4, 2, 2));
     }
 
     public void stopTask(Player player) {
@@ -22,6 +21,8 @@ public class CrownTrailManager implements Runnable {
 
     @Override
     public void run() {
+        for(Player player : Bukkit.getOnlinePlayers()){
         runningTasks.values().forEach(CrownTrailTask::run);
+        }
     }
 }
