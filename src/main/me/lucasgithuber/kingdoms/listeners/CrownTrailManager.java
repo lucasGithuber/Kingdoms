@@ -22,6 +22,7 @@ public class CrownTrailManager implements Runnable {
     @Override
     public void run() {
         for(Player player : Bukkit.getOnlinePlayers()){
+        runningTasks.put(player, new CrownTrailTask(8, 2, 2);
         runningTasks.values().forEach(CrownTrailTask::run);
         }
     }
