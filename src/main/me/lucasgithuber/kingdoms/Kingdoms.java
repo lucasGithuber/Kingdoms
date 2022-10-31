@@ -3,6 +3,7 @@ package me.lucasgithuber.kingdoms;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 import me.lucasgithuber.kingdoms.listeners.CrownTrailTask;
 import me.lucasgithuber.kingdoms.listeners.CrownTrailManager;
 import me.lucasgithuber.kingdoms.commands.GiveCrown;
@@ -19,7 +20,11 @@ public class Kingdoms extends JavaPlugin {
     public void onEnable(){
         Crown.init();
         Bukkit.getLogger().info("Enabling...");
-        Bukkit.getScheduler().runTaskTimer(this, crownTrailManager, 3, 1);
+
+        CrownTrailManager.runTaskTimer(this, 3, 1);
+        for(Player player : Bukkit.getOnlinePlayers()){
+        crownTrailManager.startTask(player);
+        }
         getCommand("givecrown").setExecutor(new GiveCrown());
 
         config.options().copyDefaults(true);
