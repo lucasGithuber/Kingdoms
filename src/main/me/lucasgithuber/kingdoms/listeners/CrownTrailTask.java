@@ -38,7 +38,6 @@ public class CrownTrailTask extends BukkitRunnable {
             player.getWorld().spawnParticle(Particle.DUST_COLOR_TRANSITION, particleLoc, 1, crownColors);
 
             degree+=5;
-            }
         }
     }
 }
