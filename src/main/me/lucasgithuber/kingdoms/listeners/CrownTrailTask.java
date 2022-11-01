@@ -31,7 +31,7 @@ public class CrownTrailTask extends BukkitRunnable {
             for(int degree=0; degree<=360; degree+=5){
             double radians = Math.toRadians(degree);
             double x = Math.cos(radians) * radius;
-            double y = Math.sin(radians * waves) * height;
+            double y = (Math.sin(radians * waves) * height)+2;
             double z = Math.sin(radians) * radius;
             Location particleLoc = player.getLocation().add(x, y, z);
             player.getWorld().spawnParticle(Particle.DUST_COLOR_TRANSITION, particleLoc, 1, crownColors);
