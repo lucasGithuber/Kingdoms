@@ -30,7 +30,7 @@ public class TrailsTask extends BukkitRunnable {
         for (Player player : Bukkit.getOnlinePlayers()) {
             ItemStack helmet = player.getInventory().getHelmet();
             if(helmet!=null){
-                if(helmet.getItemMeta()==Crown.crown.getItemMeta()){
+                if(helmet.isSimilar(Crown.crown)){
                     for(int degree=0; degree<=360; degree+=2){
                         double radians = Math.toRadians(degree);
                         double x = Math.cos(radians) * radius;
