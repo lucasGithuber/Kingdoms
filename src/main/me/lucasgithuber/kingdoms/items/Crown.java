@@ -24,6 +24,7 @@ public class Crown {
         meta.setDisplayName("§6Crown");
         List<String> lore = new ArrayList<>();
         lore.add("§7Crown that makes particles");
+        meta.setUnbreakable(true);
         meta.setLore(lore);
         meta.addEnchant(Enchantment.LUCK, 1, false);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
