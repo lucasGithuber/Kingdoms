@@ -32,7 +32,7 @@ public class TrailsTask extends BukkitRunnable {
                 for(int degree=0; degree<=360; degree+=2){
                     double radians = Math.toRadians(degree);
                     double x = Math.cos(radians) * radius;
-                    double y = (Math.cos(waves*radians)-Math.cos((waves/2)*radians))*height+2;
+                    double y = (Math.cos(waves*radians)-Math.cos((waves/2)*radians))*height;
                     double z = Math.sin(radians) * radius;
                     Location particleLoc = player.getEyeLocation().add(x, y, z);
                     player.getWorld().spawnParticle(Particle.DUST_COLOR_TRANSITION, particleLoc, 1, crownColors);

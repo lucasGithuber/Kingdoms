@@ -24,7 +24,7 @@ public class TrailsManager implements Runnable {
     @Override
     public void run() {
         for(Player player : Bukkit.getOnlinePlayers()){
-            runningTasks.put(player, new TrailsTask(8, 0.5, 1));
+            runningTasks.put(player, new TrailsTask(12, 0.3, 1));
             runningTasks.values().forEach(TrailsTask::run);
         }
     }
