@@ -4,6 +4,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.Bukkit;
 import me.lucasgithuber.kingdoms.listeners.TrailsTask;
+import me.lucasgithuber.kingdoms.items.Crown;
 
 import java.util.HashMap;
 import java.util.Map;
