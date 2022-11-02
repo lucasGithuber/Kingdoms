@@ -4,8 +4,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
-import me.lucasgithuber.kingdoms.listeners.CrownTrailTask;
-import me.lucasgithuber.kingdoms.listeners.CrownTrailManager;
+import me.lucasgithuber.kingdoms.listeners.TrailsTask;
+import me.lucasgithuber.kingdoms.listeners.TrailsManager;
 import me.lucasgithuber.kingdoms.commands.GiveCrown;
 import me.lucasgithuber.kingdoms.items.Crown;
 import java.io.*;
@@ -14,7 +14,7 @@ import java.util.*;
 public class Kingdoms extends JavaPlugin {
 
     FileConfiguration config = getConfig();
-    private final CrownTrailManager crownTrailManager = new CrownTrailManager();
+    private final TrailsManager crownTrailManager = new TrailsManager();
 
     @Override
     public void onEnable(){
