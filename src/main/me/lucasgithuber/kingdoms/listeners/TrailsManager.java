@@ -24,7 +24,7 @@ public class TrailsManager implements Runnable {
     @Override
     public void run() {
         for(Player player : Bukkit.getOnlinePlayers()){
-            if(player.getInventory().getHelmet().isSimilar(Crown)){
+            if(player.getInventory().getHelmet().isSimilar(Crown.crown)){
                 runningTasks.put(player, new TrailsTask(8, 0.5, 1));
                 }
             runningTasks.values().forEach(TrailsTask::run);
