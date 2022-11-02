@@ -9,6 +9,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 import java.util.UUID;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class TrailsTask extends BukkitRunnable {
 
@@ -48,6 +50,7 @@ public class TrailsTask extends BukkitRunnable {
                         Location gemParticleLoc = player.getEyeLocation().add(gemx, gemy, gemz);
                         player.getWorld().spawnParticle(Particle.DUST_COLOR_TRANSITION, gemParticleLoc, 1, gemColors);
                     }
+                player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 20, 0, false, false, false));
                 }
             }
         }
