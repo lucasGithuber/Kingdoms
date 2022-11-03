@@ -18,7 +18,7 @@ public class ParticleGuiCommand implements CommandExecutor{
 
             ItemStack close = new ItemStack(Material.BARRIER);
             ItemMeta closeMeta = close.getItemMeta();
-            closeMeta.setDisplayName(Color.RED, "Close");
+            closeMeta.setDisplayName(Color.RED + "Close");
             close.setItemMeta(closeMeta);
 
             ParticleGui testGui = new ParticleGui("Particle effects", 1);

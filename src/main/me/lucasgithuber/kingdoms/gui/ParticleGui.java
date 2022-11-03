@@ -14,10 +14,10 @@ public class ParticleGui {
     private Inventory inventory;
     private List<GuiButton> buttons = new ArrayList<>();
 
-    public ParticleGui(int rows){
+    public ParticleGui(String title, int rows){
         this.rows=rows;
 
-        this.inv = Bukkit.createInventory(null, rows*9);
+        this.inventory = Bukkit.createInventory(null, rows*9);
     }
 
     public void setItem(GuiButton button, int slot){
