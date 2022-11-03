@@ -1,4 +1,4 @@
-pacakge me.lucasgithuber.kingdoms.gui;
+package me.lucasgithuber.kingdoms.gui;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

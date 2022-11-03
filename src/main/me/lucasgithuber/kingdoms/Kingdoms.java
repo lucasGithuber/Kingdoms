@@ -16,12 +16,12 @@ public class Kingdoms extends JavaPlugin {
 
     FileConfiguration config = getConfig();
     private final TrailsManager crownTrailManager = new TrailsManager();
-    private static Kingdoms = i;
+    private static Kingdoms i;
 
     @Override
     public void onEnable(){
         //init
-        i=this
+        i=this;
         Crown.init();
         Bukkit.getLogger().info("Enabling...");
 
@@ -40,7 +40,7 @@ public class Kingdoms extends JavaPlugin {
         //gui
         this.getServer().getPluginManager().registerEvents(new JoinListener(), this);
         this.getServer().getPluginManager().registerEvents(new GuiListener(), this);
-        getCommand("particles").setExecutor(new ParticleGuiCommand);
+        getCommand("particles").setExecutor(new ParticleGuiCommand());
     }
     
     @Override

@@ -22,6 +22,6 @@ public class PlayerData{
     }
 
     public void setOpenGui(ParticleGui openGui){
-        this.openGui = openGui
+        this.openGui = openGui;
     }
 }

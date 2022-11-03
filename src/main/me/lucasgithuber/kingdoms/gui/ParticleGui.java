@@ -10,7 +10,7 @@ public class ParticleGui {
 
     private int rows;
     private Inventory inv;
-    private List<GuiButton> buttons = new ArrayList<>()
+    private List<GuiButton> buttons = new ArrayList<>();
 
     public ParticleGui(int rows){
         this.rows=rows;
