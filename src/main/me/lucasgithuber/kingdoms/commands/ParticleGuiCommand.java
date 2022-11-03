@@ -30,7 +30,7 @@ public class ParticleGuiCommand implements CommandExecutor{
             testGui.setItem(closeButton, 4);
 
             for(int i = 0; i <= BACKGROUND.length; i++){
-                testGui.setItemBulk(borderButton, BACKGROUND[i]);
+                testGui.setItem(borderButton, BACKGROUND[i]);
             }
             testGui.show(player);
         }else{
