@@ -24,6 +24,10 @@ public class ParticleGui {
         buttons.add(button);
         inventory.setItem(slot, button.getStack());
     }
+    public void setItemBulk(GuiButton button, int[] slots){
+        buttons.add(button);
+        inventory.setItem(slots, button.getStack());
+    }
 
     public void handleButton(ItemStack stack){
         GuiButton button = buttons.stream().filter(p -> p.getStack().isSimilar(stack)).findAny().orElse(null);
