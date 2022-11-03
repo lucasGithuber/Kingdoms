@@ -11,7 +11,7 @@ import me.lucasgithuber.kingdoms.gui.*;
 public class ParticleGui {
 
     private int rows;
-    private Inventory inv;
+    private Inventory inventory;
     private List<GuiButton> buttons = new ArrayList<>();
 
     public ParticleGui(int rows){

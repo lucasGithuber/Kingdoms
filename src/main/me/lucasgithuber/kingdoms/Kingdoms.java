@@ -6,7 +6,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import me.lucasgithuber.kingdoms.listeners.TrailsTask;
 import me.lucasgithuber.kingdoms.listeners.TrailsManager;
-import me.lucasgithuber.kingdoms.commands.GiveCrown;
+import me.lucasgithuber.kingdoms.commands.*;
 import me.lucasgithuber.kingdoms.items.Crown;
 import me.lucasgithuber.kingdoms.gui.*;
 import java.io.*;

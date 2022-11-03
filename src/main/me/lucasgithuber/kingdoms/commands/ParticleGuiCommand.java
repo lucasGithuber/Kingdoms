@@ -4,6 +4,8 @@ import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.Material;
+import org.bukkit.Color;
 
 import me.lucasgithuber.kingdoms.gui.*;
 
@@ -19,7 +21,7 @@ public class ParticleGuiCommand implements CommandExecutor{
             closeMeta.setDisplayName(Color.RED, "Close");
             close.setItemMeta(closeMeta);
 
-            CustomGui testGui = new CustomGui("Particle effects", 1);
+            ParticleGui testGui = new ParticleGui("Particle effects", 1);
             GuiButton closeButton = new GuiButton(close);
             closeButton.setAction(() -> {
                 player.closeInventory();
