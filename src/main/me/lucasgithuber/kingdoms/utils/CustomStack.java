@@ -66,7 +66,7 @@ public class CustomItemStack extends ItemStack {
                 }
                 itemMeta.setLore(lines);
             }
-            if (im instanceof PotionMeta) {
+            if (itemMeta instanceof PotionMeta) {
                 ((PotionMeta) itemMeta).setColor(color);
             }
         });
