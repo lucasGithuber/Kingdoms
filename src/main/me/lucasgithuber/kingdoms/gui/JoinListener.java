@@ -2,7 +2,7 @@ package me.lucasgithuber.kingdoms.gui;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.inventory.PlayerJoinEvent;
+import org.bukkit.event.PlayerJoinEvent;
 
 import me.lucasgithuber.kingdoms.gui.*;
 
