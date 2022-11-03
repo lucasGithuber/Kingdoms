@@ -13,29 +13,29 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.inventory.meta.PotionMeta;
 
-public class CustomItemStack extends ItemStack {
+public class CustomStack extends ItemStack {
 
-    public CustomItemStack(ItemStack item) {
+    public CustomStack(ItemStack item) {
         super(item);
     }
 
-    public CustomItemStack(Material type) {
+    public CustomStack(Material type) {
         super(type);
     }
 
-    public CustomItemStack(ItemStack item, Consumer<ItemMeta> meta) {
+    public CustomStack(ItemStack item, Consumer<ItemMeta> meta) {
         super(item);
         ItemMeta itemMeta = getItemMeta();
         meta.accept(itemMeta);
         setItemMeta(itemMeta);
     }
 
-    public CustomItemStack(Material type, Consumer<ItemMeta> meta) {
+    public CustomStack(Material type, Consumer<ItemMeta> meta) {
         this(new ItemStack(type), meta);
 
     }
 
-    public CustomItemStack(ItemStack item, String name, String... lore) {
+    public CustomStack(ItemStack item, String name, String... lore) {
         this(item, itemMeta -> {
             if (name != null) {
                 itemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
@@ -52,7 +52,7 @@ public class CustomItemStack extends ItemStack {
         });
     }
 
-    public CustomItemStack(ItemStack item, Color color, String name, String... lore) {
+    public CustomStack(ItemStack item, Color color, String name, String... lore) {
         this(item, itemMeta -> {
             if (name != null) {
                 itemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
@@ -72,7 +72,7 @@ public class CustomItemStack extends ItemStack {
         });
     }
 
-    public CustomItemStack addFlags(ItemFlag... flags) {
+    public CustomStack addFlags(ItemFlag... flags) {
         ItemMeta itemMeta = getItemMeta();
         itemMeta.addItemFlags(flags);
         setItemMeta(itemMeta);
@@ -80,7 +80,7 @@ public class CustomItemStack extends ItemStack {
         return this;
     }
 
-    public CustomItemStack setCustomModel(int data) {
+    public CustomStack setCustomModel(int data) {
         ItemMeta itemMeta = getItemMeta();
         itemMeta.setCustomModelData(data == 0 ? null : data);
         setItemMeta(itemMeta);
@@ -88,28 +88,28 @@ public class CustomItemStack extends ItemStack {
         return this;
     }
 
-    public CustomItemStack(Material type, String name, String... lore) {
+    public CustomStack(Material type, String name, String... lore) {
         this(new ItemStack(type), name, lore);
     }
 
-    public CustomItemStack(Material type, String name, List<String> lore) {
+    public CustomStack(Material type, String name, List<String> lore) {
         this(new ItemStack(type), name, lore.toArray(new String[lore.size()]));
     }
 
-    public CustomItemStack(ItemStack item, List<String> list) {
+    public CustomStack(ItemStack item, List<String> list) {
         this(item, list.get(0), list.subList(1, list.size()).toArray(new String[0]));
     }
 
-    public CustomItemStack(Material type, List<String> list) {
+    public CustomStack(Material type, List<String> list) {
         this(new ItemStack(type), list);
     }
 
-    public CustomItemStack(ItemStack item, int amount) {
+    public CustomStack(ItemStack item, int amount) {
         super(item);
         setAmount(amount);
     }
 
-    public CustomItemStack(ItemStack item, Material type) {
+    public CustomStack(ItemStack item, Material type) {
         super(item);
         setType(type);
     }
