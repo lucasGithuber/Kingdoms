@@ -14,3 +14,5 @@ api-version: 1.18
 commands:
   givecrown:
     description: gives crown that makes particles
+  particles:
+    description: opens particle gui
