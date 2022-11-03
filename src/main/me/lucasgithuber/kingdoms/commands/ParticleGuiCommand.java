@@ -31,5 +31,6 @@ public class ParticleGuiCommand implements CommandExecutor{
 
             testGui.show(player);
         }
+        return true;
     }
 }
