@@ -14,7 +14,7 @@ public class ParticleGuiCommand implements CommandExecutor{
     public static final int[] BACKGROUND ={
         0,1,2,3,4,5,6,7,8,
         
-        18,19,20,21,22,23,24,25,26}
+        18,19,20,21,22,23,24,25,26};
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] strings){
         if(sender instanceof Player){
