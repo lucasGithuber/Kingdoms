@@ -17,7 +17,7 @@ public class ParticleGui {
     public ParticleGui(String title, int rows){
         this.rows=rows;
 
-        this.inventory = Bukkit.createInventory(null, rows*9);
+        this.inventory = Bukkit.createInventory(null, rows*9, title);
     }
 
     public void setItem(GuiButton button, int slot){
