@@ -41,6 +41,10 @@ public class Kingdoms extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new JoinListener(), this);
         this.getServer().getPluginManager().registerEvents(new GuiListener(), this);
         getCommand("particles").setExecutor(new ParticleGuiCommand());
+
+        //test gui
+        this.getServer().getPluginManager().registerEvents(new TestGuiListener(), this);
+        getCommand("testparticles").setExecutor(new TestParticleGuiCommand());
     }
     
     @Override
