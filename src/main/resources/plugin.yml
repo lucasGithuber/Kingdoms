@@ -16,3 +16,5 @@ commands:
     description: gives crown that makes particles
   particles:
     description: opens particle gui
+  testparticles:
+    description: opens test particle gui

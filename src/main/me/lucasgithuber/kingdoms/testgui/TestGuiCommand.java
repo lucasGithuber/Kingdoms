@@ -10,7 +10,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-
+import java.io.*;
+import java.util.*;
 import java.util.ArrayList;
 
 public class TestGuiCommand implements CommandExecutor {
@@ -47,6 +48,8 @@ public class TestGuiCommand implements CommandExecutor {
             player.openInventory(gui);
 
 
+        }else{
+            Bukkit.getLogger().info("Command can only be ran by player");
         }
 
         return true;
