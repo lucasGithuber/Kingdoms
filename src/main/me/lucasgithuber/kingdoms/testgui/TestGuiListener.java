@@ -13,7 +13,7 @@ public class TestGuiListener implements Listener {
     @EventHandler
     public void onClick(InventoryClickEvent e){
         Player player = (Player) e.getWhoClicked();
-        if (e.getView().getTitle().equalsIgnoreCase(ChatColor.BLUE "Particles")){
+        if(e.getView().getTitle().equalsIgnoreCase(ChatColor.BLUE + "Particles")){
             e.setCancelled(true);
             if (e.getCurrentItem() == null){
                 return;
