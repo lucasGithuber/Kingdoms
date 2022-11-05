@@ -9,6 +9,7 @@ import me.lucasgithuber.kingdoms.listeners.TrailsManager;
 import me.lucasgithuber.kingdoms.commands.*;
 import me.lucasgithuber.kingdoms.items.Crown;
 import me.lucasgithuber.kingdoms.gui.*;
+package me.lucasgithuber.kingdoms.testgui.*;
 import java.io.*;
 import java.util.*;
 
@@ -44,7 +45,7 @@ public class Kingdoms extends JavaPlugin {
 
         //test gui
         this.getServer().getPluginManager().registerEvents(new TestGuiListener(), this);
-        getCommand("testparticles").setExecutor(new TestParticleGuiCommand());
+        getCommand("testparticles").setExecutor(new TestGuiCommand());
     }
     
     @Override

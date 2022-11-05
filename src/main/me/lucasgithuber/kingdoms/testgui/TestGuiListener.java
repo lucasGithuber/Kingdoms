@@ -8,7 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 
-public class GUIMoveItem implements Listener {
+public class TestGuiListener implements Listener {
 
     @EventHandler
     public void clickEvent(InventoryClickEvent e){
