@@ -13,10 +13,10 @@ public class GUIMoveItem implements Listener {
     @EventHandler
     public void clickEvent(InventoryClickEvent e){
 
-        //Check to see if its the GUI menu
-        if(e.getClickedInventory().getTitle().equalsIgnoreCase(ChatColor.AQUA + "Custom GUI")){
+        //check if its the GUI menu
+        if(e.getView().getTitle().equalsIgnoreCase(ChatColor.AQUA + "Custom GUI")){
             Player player = (Player) e.getWhoClicked();
-            //Determine what they selected and what to do
+            //check what they click
             switch(e.getCurrentItem().getType()){
                 case BARRIER:
                     player.closeInventory();
@@ -26,7 +26,7 @@ public class GUIMoveItem implements Listener {
                     player.getInventory().addItem(new ItemStack(Material.DIAMOND_SWORD));
                     break;
             }
-            e.setCancelled(true); //So they cant take the items
+            e.setCancelled(true); //dont take item
         }
 
     }
