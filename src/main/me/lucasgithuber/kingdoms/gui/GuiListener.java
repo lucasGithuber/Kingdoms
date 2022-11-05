@@ -14,16 +14,21 @@ public class GuiListener implements Listener{
 
     @EventHandler
     public void onClick(InventoryClickEvent e){
+
         PlayerData data = PlayerDataManager.getData((Player)e.getWhoClicked());
-
-        if(data != null && data.getOpenGui() != null){
-            if(e.getCurrentItem()!=null){
-                data.getOpenGui().handleButton(e.getCurrentItem());
-
-                e.setCancelled(true);
+        if(data != null){
+            if(data.getOpenGui() != null){
+                if(e.getCurrentItem()!=null){
+                    data.getOpenGui().handleButton(e.getCurrentItem());
+                    e.setCancelled(true);
+                }else{
+                    Bukkit.getLogger().info("current item is null");
+                }
+            }else{
+                Bukkit.getLogger().info("openGui is null");
             }
         }else{
-            Bukkit.getLogger().info("data or openGui or currentItem is null");
+            Bukkit.getLogger().info("data is null");
         }
     }
 }
