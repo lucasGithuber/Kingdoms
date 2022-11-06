@@ -21,7 +21,7 @@ public class ParticlesGuiListener implements Listener {
             }else if (e.getCurrentItem().getType()==Material.BARRIER){
                 player.closeInventory();
             }else if (e.getCurrentItem().getType()==Material.STRING){
-                SpiralTrailsManager.runningTasks.put(player, new SpiralTrailsTask(2, 2));
+                SpiralTrailsManager.RUNNING_TASKS.put(player, new SpiralTrailsTask(2, 2));
                 player.closeInventory();
             }
         }

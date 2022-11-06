@@ -11,17 +11,17 @@ import java.util.Optional;
 
 public class SpiralTrailsManager implements Runnable {
 
-    public final Map<Player, SpiralTrailsTask> runningTasks = new HashMap<>();
+    public static final Map<Player, SpiralTrailsTask> RUNNING_TASKS = new HashMap<>();
 
     public void startTask(Player player) {
     }
 
     public void stopTask(Player player) {
-        Optional.ofNullable(runningTasks.get(player)).ifPresent(BukkitRunnable::cancel);
+        Optional.ofNullable(RUNNING_TASKS.get(player)).ifPresent(BukkitRunnable::cancel);
     }
 
     @Override
     public void run() {
-            runningTasks.values().forEach(SpiralTrailsTask::run);
+            RUNNING_TASKS.values().forEach(SpiralTrailsTask::run);
     }
 }

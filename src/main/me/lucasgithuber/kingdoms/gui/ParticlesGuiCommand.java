@@ -15,7 +15,7 @@ import java.io.*;
 import java.util.*;
 import java.util.ArrayList;
 
-public class ParticleGuiCommand implements CommandExecutor {
+public class ParticlesGuiCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
