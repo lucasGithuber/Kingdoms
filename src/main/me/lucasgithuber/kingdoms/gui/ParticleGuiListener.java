@@ -7,7 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.ChatColor;
 import org.bukkit.inventory.ItemStack;
-package me.lucasgithuber.kingdoms.listeners.*;
+import me.lucasgithuber.kingdoms.listeners.*;
 
 public class ParticlesGuiListener implements Listener {
 

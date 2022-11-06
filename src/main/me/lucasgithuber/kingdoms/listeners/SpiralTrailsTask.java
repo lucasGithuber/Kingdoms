@@ -29,7 +29,6 @@ public class SpiralTrailsTask extends BukkitRunnable {
         Particle.DustTransition crownColors = new Particle.DustTransition(Color.YELLOW, Color.fromRGB(255, 208, 0), 0.3F);
         Particle.DustTransition gemColors = new Particle.DustTransition(Color.RED, Color.fromRGB(89, 0, 255), 0.6F);
         for (Player player : Bukkit.getOnlinePlayers()) {
-            ItemStack helmet = player.getInventory().getHelmet();
             for(int degree=0; degree<=360; degree+=2){
                 double radians = Math.toRadians(degree);
                 double x = Math.cos(radians) * radius;
@@ -40,3 +39,4 @@ public class SpiralTrailsTask extends BukkitRunnable {
             }
         }
     }
+}

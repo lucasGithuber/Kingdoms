@@ -25,7 +25,7 @@ public class ParticleGuiCommand implements CommandExecutor {
             Inventory gui = Bukkit.createInventory(player, 27, ChatColor.BLUE + "Particles");
 
             //options
-            ItemStack close = GuiElements.CLOSE_BUTTON //Closes gui
+            ItemStack close = GuiElements.CLOSE_BUTTON; //Closes gui
             ItemStack sword = new ItemStack(Material.DIAMOND_SWORD); //Gives the player a weapon
 
             //Put the items in the inventory
