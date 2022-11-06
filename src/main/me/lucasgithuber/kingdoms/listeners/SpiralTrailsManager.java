@@ -11,7 +11,7 @@ import java.util.Optional;
 
 public class SpiralTrailsManager implements Runnable {
 
-    private final Map<Player, SpiralTrailsTask> runningTasks = new HashMap<>();
+    public final Map<Player, SpiralTrailsTask> runningTasks = new HashMap<>();
 
     public void startTask(Player player) {
     }
