@@ -12,12 +12,12 @@ import java.util.UUID;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class TrailsTask extends BukkitRunnable {
+public class CrownTrailsTask extends BukkitRunnable {
 
     private final int waves;
     private final double height;
     private final double radius;
-    public TrailsTask(int waves, double height, double radius) {
+    public CrownTrailsTask(int waves, double height, double radius) {
         this.waves = waves;
         this.height = height;
         this.radius = radius;

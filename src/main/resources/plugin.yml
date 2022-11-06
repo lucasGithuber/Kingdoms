@@ -13,8 +13,6 @@ api-version: 1.18
 
 commands:
   givecrown:
-    description: gives crown that makes particles
+    description: gives crown that makes particles, and regenerates the player
   particles:
     description: opens particle gui
-  testparticles:
-    description: opens test particle gui

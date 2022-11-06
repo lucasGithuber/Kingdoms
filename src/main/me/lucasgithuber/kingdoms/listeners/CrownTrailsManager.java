@@ -3,16 +3,16 @@ package me.lucasgithuber.kingdoms.listeners;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.Bukkit;
-import me.lucasgithuber.kingdoms.listeners.TrailsTask;
+import me.lucasgithuber.kingdoms.listeners.CrownTrailsTask;
 import me.lucasgithuber.kingdoms.items.Crown;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-public class TrailsManager implements Runnable {
+public class CrownTrailsManager implements Runnable {
 
-    private final Map<Player, TrailsTask> runningTasks = new HashMap<>();
+    private final Map<Player, CrownTrailsTask> runningTasks = new HashMap<>();
 
     public void startTask(Player player) {
     }
@@ -24,8 +24,8 @@ public class TrailsManager implements Runnable {
     @Override
     public void run() {
         for(Player player : Bukkit.getOnlinePlayers()){
-            runningTasks.put(player, new TrailsTask(12, 0.3, 0.6));
-            runningTasks.values().forEach(TrailsTask::run);
+            runningTasks.put(player, new CrownTrailsTask(12, 0.3, 0.6));
+            runningTasks.values().forEach(CrownTrailsTask::run);
         }
     }
 }

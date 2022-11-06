@@ -4,19 +4,18 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
-import me.lucasgithuber.kingdoms.listeners.TrailsTask;
-import me.lucasgithuber.kingdoms.listeners.TrailsManager;
+import me.lucasgithuber.kingdoms.listeners.CrownTrailsTask;
+import me.lucasgithuber.kingdoms.listeners.CrownTrailsManager;
 import me.lucasgithuber.kingdoms.commands.*;
 import me.lucasgithuber.kingdoms.items.Crown;
 import me.lucasgithuber.kingdoms.gui.*;
-import me.lucasgithuber.kingdoms.testgui.*;
 import java.io.*;
 import java.util.*;
 
 public class Kingdoms extends JavaPlugin {
 
     FileConfiguration config = getConfig();
-    private final TrailsManager crownTrailManager = new TrailsManager();
+    private final CrownTrailsManager crownTrailManager = new CrownTrailsManager();
     private static Kingdoms i;
 
     @Override
@@ -39,8 +38,8 @@ public class Kingdoms extends JavaPlugin {
         Bukkit.getLogger().info(config.getString("test")+"is enabling");
 
         //gui
-        this.getServer().getPluginManager().registerEvents(new TestGuiListener(), this);
-        getCommand("testparticles").setExecutor(new TestGuiCommand());
+        this.getServer().getPluginManager().registerEvents(new ParticlesGuiListener(), this);
+        getCommand("particles").setExecutor(new ParticlesGuiCommand());
     }
     
     @Override
