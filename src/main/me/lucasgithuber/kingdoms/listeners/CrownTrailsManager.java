@@ -18,7 +18,7 @@ public class CrownTrailsManager implements Runnable {
     }
 
     public void stopTask(Player player) {
-        Optional.ofNullable(runningTasks.get(player)).ifPresent(BukkitRunnable::cancel);
+        Optional.ofNullable(runningTasks.get(player)).ifPresent(CrownTrailsTask::cancel);
     }
 
     @Override

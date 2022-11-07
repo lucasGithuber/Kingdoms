@@ -17,7 +17,7 @@ public class SpiralTrailsManager implements Runnable {
     }
 
     public void stopTask(Player player) {
-        Optional.ofNullable(RUNNING_TASKS.get(player)).ifPresent(BukkitRunnable::cancel);
+        Optional.ofNullable(RUNNING_TASKS.get(player)).ifPresent(SpiralTrailsTask::cancel);
     }
 
     @Override
