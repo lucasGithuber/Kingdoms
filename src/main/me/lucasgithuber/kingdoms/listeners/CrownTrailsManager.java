@@ -18,14 +18,14 @@ public class CrownTrailsManager implements Runnable {
     }
 
     public void stopTask(Player player) {
-        Optional.ofNullable(runningTasks.get(player)).ifPresent(CrownTrailsTask::cancel);
+        Optional.ofNullable(crownRunningTasks.get(player)).ifPresent(CrownTrailsTask::cancel);
     }
 
     @Override
     public void run() {
         for(Player player : Bukkit.getOnlinePlayers()){
-            runningTasks.put(player, new CrownTrailsTask(12, 0.3, 0.6));
-            runningTasks.values().forEach(CrownTrailsTask::run);
+            crownRunningTasks.put(player, new CrownTrailsTask(12, 0.3, 0.6));
+            crownRunningTasks.values().forEach(CrownTrailsTask::run);
         }
     }
 }

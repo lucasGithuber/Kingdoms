@@ -14,16 +14,16 @@ public class SpiralTrailsManager implements Runnable {
     public static final Map<Player, SpiralTrailsTask> SPIRAL_RUNNING_TASKS = new HashMap<>();
 
     public void startTask(Player player) {
-        RUNNING_TASKS.put(player, new SpiralTrailsTask(2, 2));
+        SPIRAL_RUNNING_TASKS.put(player, new SpiralTrailsTask(2, 2));
     }
 
     public void stopTask(Player player) {
-        Optional.ofNullable(RUNNING_TASKS.get(player)).ifPresent(SpiralTrailsTask::cancel);
+        Optional.ofNullable(SPIRAL_RUNNING_TASKS.get(player)).ifPresent(SpiralTrailsTask::cancel);
     }
 
     @Override
     public void run() {
         
-        RUNNING_TASKS.values().forEach(SpiralTrailsTask::run);
+        SPIRAL_RUNNING_TASKS.values().forEach(SpiralTrailsTask::run);
     }
 }
