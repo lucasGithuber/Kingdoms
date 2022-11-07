@@ -27,9 +27,10 @@ public class ParticlesGuiCommand implements CommandExecutor {
             //options
             ItemStack close = GuiElements.CLOSE_BUTTON; //Closes gui
             ItemStack spiral = GuiElements.STRING_OPTION; //Spiral
+            ItemStack cancel = GuiElements.CANCEL_OPTION; //Spiral
 
             //Put the items in the inventory
-            ItemStack[] menu_items = {close, spiral};
+            ItemStack[] menu_items = {close, cancel, spiral};
             gui.setContents(menu_items);
             player.openInventory(gui);
 
