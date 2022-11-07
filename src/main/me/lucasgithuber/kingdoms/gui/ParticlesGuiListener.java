@@ -10,7 +10,7 @@ import org.bukkit.inventory.ItemStack;
 import me.lucasgithuber.kingdoms.listeners.*;
 
 public class ParticlesGuiListener implements Listener {
-
+    private final SpiralTrailsManager spiralTrailManager = new SpiralTrailsManager();
     @EventHandler
     public void onClick(InventoryClickEvent e){
         Player player = (Player) e.getWhoClicked();
@@ -21,7 +21,7 @@ public class ParticlesGuiListener implements Listener {
             }else if (e.getCurrentItem().getType()==Material.BARRIER){
                 player.closeInventory();
             }else if (e.getCurrentItem().getType()==Material.STRING){
-                SpiralTrailsManager.RUNNING_TASKS.put(player, new SpiralTrailsTask(2, 2));
+                spiralTrailManager.startTask(player);
                 player.closeInventory();
             }
         }

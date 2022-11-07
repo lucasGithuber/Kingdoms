@@ -12,7 +12,7 @@ import java.util.Optional;
 
 public class CrownTrailsManager implements Runnable {
 
-    private final Map<Player, CrownTrailsTask> runningTasks = new HashMap<>();
+    private final Map<Player, CrownTrailsTask> crownRunningTasks = new HashMap<>();
 
     public void startTask(Player player) {
     }

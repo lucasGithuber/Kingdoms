@@ -11,9 +11,10 @@ import java.util.Optional;
 
 public class SpiralTrailsManager implements Runnable {
 
-    public static final Map<Player, SpiralTrailsTask> RUNNING_TASKS = new HashMap<>();
+    public static final Map<Player, SpiralTrailsTask> SPIRAL_RUNNING_TASKS = new HashMap<>();
 
     public void startTask(Player player) {
+        RUNNING_TASKS.put(player, new SpiralTrailsTask(2, 2));
     }
 
     public void stopTask(Player player) {
@@ -22,6 +23,7 @@ public class SpiralTrailsManager implements Runnable {
 
     @Override
     public void run() {
-            RUNNING_TASKS.values().forEach(SpiralTrailsTask::run);
+        
+        RUNNING_TASKS.values().forEach(SpiralTrailsTask::run);
     }
 }
