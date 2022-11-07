@@ -16,20 +16,23 @@ public class ParticlesGuiListener implements Listener {
         Player player = (Player) e.getWhoClicked();
         if(e.getView().getTitle().equalsIgnoreCase(ChatColor.BLUE + "Particles")){
             e.setCancelled(true);
-            switch(e.getCurrentItem()){
-                case null:
-                break;
-                case Material.BARRIER:
+            if (e.getCurrentItem() == null){
+                return;
+
+            }else if (e.getCurrentItem().getType()==Material.BARRIER){
+
                 player.closeInventory();
-                break;
-                case Material.RED_STAINED_GLASS_PANE:
+
+            }else if (e.getCurrentItem().getType()==Material.RED_STAINED_GLASS_PANE){
+
                 SPIRAL_TRAIL_MANAGER.stopTask(player);
                 player.closeInventory();
-                break;
-                case Material.STRING:
+
+            }else if (e.getCurrentItem().getType()==Material.STRING){
+
                 SPIRAL_TRAIL_MANAGER.startTask(player);
                 player.closeInventory();
-                break;
+            
             }
         }
     }
