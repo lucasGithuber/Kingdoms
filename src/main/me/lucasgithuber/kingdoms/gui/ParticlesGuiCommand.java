@@ -29,7 +29,7 @@ public class ParticlesGuiCommand implements CommandExecutor {
             ItemStack spiral = GuiElements.STRING_OPTION; //Spiral
 
             //Put the items in the inventory
-            ItemStack[] menu_items = {close, strin};
+            ItemStack[] menu_items = {close, spiral};
             gui.setContents(menu_items);
             player.openInventory(gui);
 
