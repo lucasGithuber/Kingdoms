@@ -19,9 +19,9 @@ public class GuiElements {
         ChatColor.RED + "Close"
     );
 
-    public static final CustomStack CLOSE_OPTION = new CustomStack(
+    public static final CustomStack CANCEL_OPTION = new CustomStack(
         Material.RED_STAINED_GLASS_PANE,
-        ChatColor.GRAY + "Close"
+        ChatColor.GRAY + "None"
     );
 
     public static final CustomStack BLUE_HELIX_OPTION = new CustomStack(
