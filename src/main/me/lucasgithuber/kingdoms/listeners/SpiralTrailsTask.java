@@ -26,13 +26,15 @@ public class SpiralTrailsTask extends BukkitRunnable {
     }
 
     public void makeSpiralTrail(double radius,double height){
-        for(int degree=0; degree<=360; degree+=2){
-            double radians = Math.toRadians(degree);
-            double x = Math.cos(radians) * radius;
-            double y = height;
-            double z = Math.sin(radians) * radius;
-            Location particleLoc = player.getEyeLocation().add(x, y, z);
-            player.getWorld().spawnParticle(Particle.FIREWORKS_SPARK, particleLoc, 1);
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            for(int degree=0; degree<=360; degree+=2){
+                double radians = Math.toRadians(degree);
+                double x = Math.cos(radians) * radius;
+                double y = height;
+                double z = Math.sin(radians) * radius;
+                Location particleLoc = player.getEyeLocation().add(x, y, z);
+                player.getWorld().spawnParticle(Particle.FIREWORKS_SPARK, particleLoc, 1);
+            }
         }
     }
 }
