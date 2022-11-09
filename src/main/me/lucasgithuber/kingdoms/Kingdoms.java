@@ -41,7 +41,7 @@ public class Kingdoms extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new ParticlesGuiListener(), this);
         getCommand("particles").setExecutor(new ParticlesGuiCommand());
 
-        Bukkit.getScheduler().runTaskTimer(this, ParticlesGuiListener.SPIRAL_TRAIL_MANAGER, 3, 1);
+        Bukkit.getScheduler().runTaskTimer(this, waveParticleManager, 0, 5);
     }
     
     @Override
