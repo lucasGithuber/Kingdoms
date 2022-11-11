@@ -24,10 +24,10 @@ public class ParticlesGuiListener implements Listener {
     BukkitScheduler scheduler = Bukkit.getScheduler();
     private int degree = 0;
 
-    public PlayerListener(Kingdoms kings){
+    public static void PlayerListener(Kingdoms kings){
         this.kings = kings;
     }
-    
+
     @EventHandler
     public void onClick(InventoryClickEvent e){
         Player player = (Player) e.getWhoClicked();
@@ -51,22 +51,22 @@ public class ParticlesGuiListener implements Listener {
                     Bukkit.getLogger().info("spiral task running");
                 }, 0L, 5L);
 
-                    public void makeSpiralTrail(double radius,double height){
-                        degree%=360;
-                        for (Player player : Bukkit.getOnlinePlayers()) {
-                            double radians = Math.toRadians(degree);
-                            double x = Math.cos(radians) * radius;
-                            double y = height;
-                            double z = Math.sin(radians) * radius;
-                            Location particleLoc = player.getEyeLocation().add(x, y, z);
-                            player.getWorld().spawnParticle(Particle.FIREWORKS_SPARK, particleLoc, 0, 0, 0, 0, 0.1);
-                        }
-                    degree+=5;
-                }
-
                 player.closeInventory();
             
             }
         }
+    }
+
+    public void makeSpiralTrail(double radius,double height){
+    degree%=360;
+    for (Player player : Bukkit.getOnlinePlayers()) {
+        double radians = Math.toRadians(degree);
+        double x = Math.cos(radians) * radius;
+        double y = height;
+        double z = Math.sin(radians) * radius;
+        Location particleLoc = player.getEyeLocation().add(x, y, z);
+        player.getWorld().spawnParticle(Particle.FIREWORKS_SPARK, particleLoc, 0, 0, 0, 0, 0.1);
+        }
+    degree+=5;
     }
 }
