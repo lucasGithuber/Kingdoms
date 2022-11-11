@@ -24,7 +24,7 @@ public class ParticlesGuiListener implements Listener {
     BukkitScheduler scheduler = Bukkit.getScheduler();
     private int degree = 0;
 
-    public static void PlayerListener(Kingdoms kings){
+    public static void ParticlesGuiListener(Kingdoms kings){
         this.kings = kings;
     }
 
