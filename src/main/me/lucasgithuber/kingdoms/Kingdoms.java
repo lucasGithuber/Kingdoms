@@ -39,7 +39,7 @@ public class Kingdoms extends JavaPlugin {
         Bukkit.getLogger().info(config.getString("test")+"is enabling");
 
         //gui
-        this.getServer().getPluginManager().registerEvents(new ParticlesGuiListener(), this);
+        this.getServer().getPluginManager().registerEvents(particlesGuiListener, this);
         getCommand("particles").setExecutor(new ParticlesGuiCommand());
 
     }
