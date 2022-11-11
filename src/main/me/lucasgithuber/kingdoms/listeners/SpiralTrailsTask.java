@@ -36,5 +36,6 @@ public class SpiralTrailsTask extends BukkitRunnable {
             Location particleLoc = player.getEyeLocation().add(x, y, z);
             player.getWorld().spawnParticle(Particle.FIREWORKS_SPARK, particleLoc, 0, 0, 0, 0, 0.1);
         }
+        degree+=5;
     }
 }
