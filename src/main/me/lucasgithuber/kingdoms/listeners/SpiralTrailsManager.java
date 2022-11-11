@@ -18,12 +18,11 @@ public class SpiralTrailsManager implements Runnable {
     }
 
     public void stopTask(Player player) {
-        Optional.ofNullable(SPIRAL_RUNNING_TASKS.get(player)).ifPresent(SpiralTrailsTask::cancel);
+        Optional.ofNullable(SPIRAL_RUNNING_TASKS.get(player)).ifPresent(BukkitRunnable::cancel);
     }
 
     @Override
-    public void run() {
-        
+    public void run() { 
         SPIRAL_RUNNING_TASKS.values().forEach(SpiralTrailsTask::run);
     }
 }
