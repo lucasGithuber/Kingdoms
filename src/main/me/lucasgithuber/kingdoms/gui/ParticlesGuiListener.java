@@ -19,11 +19,10 @@ import java.io.*;
 import java.util.*;
 
 public class ParticlesGuiListener implements Listener {
-    private static final Kingdoms kings;
-
     BukkitScheduler scheduler = Bukkit.getScheduler();
     private int degree = 0;
-
+    private final Kingdoms kings;
+    
     public static void ParticlesGuiListener(Kingdoms kings){
         this.kings = kings;
     }
