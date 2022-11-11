@@ -17,6 +17,7 @@ import java.io.*;
 import java.util.*;
 
 public class ParticlesGuiListener implements Listener {
+    private int degree = 0;
     @EventHandler
     public void onClick(InventoryClickEvent e){
         Player player = (Player) e.getWhoClicked();
