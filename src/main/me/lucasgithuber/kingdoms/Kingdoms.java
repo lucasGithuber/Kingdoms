@@ -22,7 +22,7 @@ public class Kingdoms extends JavaPlugin {
     public void onEnable(){
         //init
         i=this;
-        particlesGuiListener = new ParticlesGuiListener(this);
+        ParticlesGuiListener particlesGuiListener = new ParticlesGuiListener(this);
         Crown.init();
         Bukkit.getLogger().info("Enabling...");
 
