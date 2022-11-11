@@ -8,10 +8,11 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.ChatColor;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
-import me.lucasgithuber.kingdoms.listeners.*;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Particle;
+import me.lucasgithuber.kingdoms.Kingdoms;
+import me.lucasgithuber.kingdoms.listeners.*;
 
 import java.io.*;
 import java.util.*;
