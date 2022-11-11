@@ -8,6 +8,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.ChatColor;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.scheduler.BukkitScheduler;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Particle;
@@ -18,7 +19,15 @@ import java.io.*;
 import java.util.*;
 
 public class ParticlesGuiListener implements Listener {
+    private final Kingdoms kings;
+
+    BukkitScheduler scheduler = Bukkit.getScheduler();
     private int degree = 0;
+
+    public PlayerListener(Kingdoms kings){
+        this.kings = kings;
+    }
+    
     @EventHandler
     public void onClick(InventoryClickEvent e){
         Player player = (Player) e.getWhoClicked();
@@ -37,12 +46,10 @@ public class ParticlesGuiListener implements Listener {
 
             }else if (e.getCurrentItem().getType()==Material.STRING){
 
-                BukkitRunnable spiralRunnable = new BukkitRunnable(){
-                    @Override
-                    public void run() {
-                        makeSpiralTrail(2, 2);
-                        Bukkit.getLogger().info("spiral task is running");
-                    }
+                scheduler.runTaskTimer(kings, () -> {
+                    makeSpiralTrail(2, 2);
+                    Bukkit.getLogger().info("spiral task running");
+                }, 0L, 5L);
 
                     public void makeSpiralTrail(double radius,double height){
                         degree%=360;
@@ -56,7 +63,7 @@ public class ParticlesGuiListener implements Listener {
                         }
                     degree+=5;
                 }
-                }.runTaskTimer(Kingdoms.getInstance(), 0, 5);
+
                 player.closeInventory();
             
             }
