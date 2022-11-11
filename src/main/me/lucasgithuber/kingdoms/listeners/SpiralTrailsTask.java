@@ -8,9 +8,11 @@ import org.bukkit.Particle;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
-import java.util.UUID;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+
+import java.io.*;
+import java.util.*;
 
 public class SpiralTrailsTask extends BukkitRunnable {
 
@@ -24,6 +26,7 @@ public class SpiralTrailsTask extends BukkitRunnable {
     @Override
     public void run() {
         makeSpiralTrail(radius, height);
+        Bukkit.getLogger().info("spiral task is running");
     }
 
     public void makeSpiralTrail(double radius,double height){

@@ -5,11 +5,11 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.Bukkit;
 import me.lucasgithuber.kingdoms.listeners.SpiralTrailsTask;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.io.*;
+import java.util.*;
 
 public class SpiralTrailsManager implements Runnable {
+    private int id =-1;
 
     public static final Map<Player, SpiralTrailsTask> SPIRAL_RUNNING_TASKS = new HashMap<>();
 
@@ -24,5 +24,8 @@ public class SpiralTrailsManager implements Runnable {
     @Override
     public void run() { 
         SPIRAL_RUNNING_TASKS.values().forEach(SpiralTrailsTask::run);
+        if(Bukkit.getServer().getScheduler().isCurrentlyRunning(this.id);){
+            Bukkit.getLogger().info("spiral is running");
+        }
     }
 }
