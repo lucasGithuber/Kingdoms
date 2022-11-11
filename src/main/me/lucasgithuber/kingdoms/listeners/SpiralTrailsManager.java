@@ -24,7 +24,7 @@ public class SpiralTrailsManager implements Runnable {
     @Override
     public void run() { 
         SPIRAL_RUNNING_TASKS.values().forEach(SpiralTrailsTask::run);
-        if(Bukkit.getServer().getScheduler().isCurrentlyRunning(this.id);){
+        if(Bukkit.getServer().getScheduler().isCurrentlyRunning(this.id)){
             Bukkit.getLogger().info("spiral is running");
         }
     }
