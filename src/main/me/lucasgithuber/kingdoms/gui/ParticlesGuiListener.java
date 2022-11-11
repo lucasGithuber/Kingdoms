@@ -7,10 +7,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.ChatColor;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.scheduler.BukkitRunnable;
 import me.lucasgithuber.kingdoms.listeners.*;
 
 public class ParticlesGuiListener implements Listener {
-    public static final SpiralTrailsManager SPIRAL_TRAIL_MANAGER = new SpiralTrailsManager();
     @EventHandler
     public void onClick(InventoryClickEvent e){
         Player player = (Player) e.getWhoClicked();
@@ -25,12 +25,30 @@ public class ParticlesGuiListener implements Listener {
 
             }else if (e.getCurrentItem().getType()==Material.RED_STAINED_GLASS_PANE){
 
-                SPIRAL_TRAIL_MANAGER.stopTask(player);
                 player.closeInventory();
 
             }else if (e.getCurrentItem().getType()==Material.STRING){
 
-                SPIRAL_TRAIL_MANAGER.startTask(player);
+                BukkitRunnable spiralRunnable = new BukkitRunnable(){
+                    @Override
+                    public void run() {
+                        makeSpiralTrail(2, 2);
+                        Bukkit.getLogger().info("spiral task is running");
+                    }
+
+                    public void makeSpiralTrail(double radius,double height){
+                        degree%=360;
+                        for (Player player : Bukkit.getOnlinePlayers()) {
+                            double radians = Math.toRadians(degree);
+                            double x = Math.cos(radians) * radius;
+                            double y = height;
+                            double z = Math.sin(radians) * radius;
+                            Location particleLoc = player.getEyeLocation().add(x, y, z);
+                            player.getWorld().spawnParticle(Particle.FIREWORKS_SPARK, particleLoc, 0, 0, 0, 0, 0.1);
+                        }
+                    degree+=5;
+                }
+                }.runTaskTimer(Kingdoms.getInstance(), 0, 5);
                 player.closeInventory();
             
             }

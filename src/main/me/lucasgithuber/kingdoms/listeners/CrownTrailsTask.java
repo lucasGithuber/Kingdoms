@@ -17,7 +17,6 @@ public class CrownTrailsTask extends BukkitRunnable {
     private final int waves;
     private final double height;
     private final double radius;
-    private int degree=0;
     public CrownTrailsTask(int waves, double height, double radius) {
         this.waves = waves;
         this.height = height;
@@ -29,20 +28,20 @@ public class CrownTrailsTask extends BukkitRunnable {
     }
 
     public void makeCrownWave(double radius, int waves, double height){
-        degree%=360;
         Particle.DustTransition crownColors = new Particle.DustTransition(Color.YELLOW, Color.fromRGB(255, 208, 0), 0.3F);
         Particle.DustTransition gemColors = new Particle.DustTransition(Color.RED, Color.fromRGB(89, 0, 255), 0.6F);
         for (Player player : Bukkit.getOnlinePlayers()) {
             ItemStack helmet = player.getInventory().getHelmet();
             if(helmet!=null){
                 if(helmet.isSimilar(Crown.crown)){
+                    for(int degree=0; degree<=360; degree+=2){
                         double radians = Math.toRadians(degree);
                         double x = Math.cos(radians) * radius;
                         double y = (Math.cos(waves*radians)-Math.cos((waves/2)*radians))*height+1;
                         double z = Math.sin(radians) * radius;
                         Location particleLoc = player.getEyeLocation().add(x, y, z);
                         player.getWorld().spawnParticle(Particle.DUST_COLOR_TRANSITION, particleLoc, 1, crownColors);
-
+                    }
                     for(int gemDegree=0; gemDegree<=360; gemDegree+=60){
                         double gemRadians = Math.toRadians(gemDegree);
                         double gemx = Math.cos(gemRadians) * radius;
@@ -55,6 +54,5 @@ public class CrownTrailsTask extends BukkitRunnable {
                 }
             }
         }
-        degree+=5;
     }
 }

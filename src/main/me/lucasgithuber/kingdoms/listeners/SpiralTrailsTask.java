@@ -26,7 +26,6 @@ public class SpiralTrailsTask extends BukkitRunnable {
     @Override
     public void run() {
         makeSpiralTrail(radius, height);
-        Bukkit.getLogger().info("spiral task is running");
     }
 
     public void makeSpiralTrail(double radius,double height){
