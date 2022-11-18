@@ -45,7 +45,7 @@ public class ParticlesGuiListener implements Listener {
                     scheduler.cancelTask(id);
                     id=-1;
                     player.closeInventory();
-                    Bukkit.getLogger().info("id now is -1")
+                    Bukkit.getLogger().info("id now is -1")`;
                 }
             }else if (e.getCurrentItem().getType()==Material.STRING){
 
