@@ -22,6 +22,7 @@ public class ParticlesGuiListener implements Listener {
     BukkitScheduler scheduler = Bukkit.getScheduler();
     private int degree = 0;
     private final Kingdoms kings;
+    private int id = -1;
 
     public ParticlesGuiListener(Kingdoms kings){
         this.kings = kings;
@@ -40,12 +41,17 @@ public class ParticlesGuiListener implements Listener {
                 player.closeInventory();
 
             }else if (e.getCurrentItem().getType()==Material.RED_STAINED_GLASS_PANE){
-
-                player.closeInventory();
-
+                if(id>=0){
+                    scheduler.cancelTask(id);
+                    id=-1;
+                    player.closeInventory();
+                    Bukkit.getLogger().info("id now is -1")
+                }
             }else if (e.getCurrentItem().getType()==Material.STRING){
 
                 scheduler.runTaskTimer(kings, () -> {
+                    id = 0;
+                    Bukkit.getLogger().info("id now is 0");
                     makeSpiralTrail(2, 2, player);
                     Bukkit.getLogger().info("spiral task running");
                 }, 0L, 5L);
