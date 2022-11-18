@@ -63,13 +63,13 @@ public class ParticlesGuiListener implements Listener {
     }
 
     public void makeSpiralTrail(double radius,double height, Player player){
-    degree%=360;{
-        double radians = Math.toRadians(degree);
-        double x = Math.cos(radians) * radius;
-        double y = height;
-        double z = Math.sin(radians) * radius;
-        Location particleLoc = player.getEyeLocation().add(x, y, z);
-        player.getWorld().spawnParticle(Particle.FIREWORKS_SPARK, particleLoc, 0, 0, 0, 0, 0.1);
+    degree%=360;
+    double radians = Math.toRadians(degree);
+    double x = Math.cos(radians) * radius;
+    double y = height;
+    double z = Math.sin(radians) * radius;
+    Location particleLoc = player.getEyeLocation().add(x, y, z);
+    player.getWorld().spawnParticle(Particle.FIREWORKS_SPARK, particleLoc, 0, 0, 0, 0, 0.1);
 
     degree+=5;
     }
