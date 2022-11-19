@@ -48,7 +48,7 @@ public class ParticlesGuiListener implements Listener {
                     Bukkit.getLogger().info("id now is -1");
                 }
             }else if (e.getCurrentItem().getType()==Material.STRING){
-                if(id=0){
+                if(id!=0){
                     scheduler.runTaskTimer(kings, () -> {
                         id = 0;
                         Bukkit.getLogger().info("id now is 0");
