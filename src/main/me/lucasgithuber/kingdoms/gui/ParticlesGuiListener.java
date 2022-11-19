@@ -41,7 +41,7 @@ public class ParticlesGuiListener implements Listener {
                 player.closeInventory();
 
             }else if (e.getCurrentItem().getType()==Material.RED_STAINED_GLASS_PANE){
-                if(id>=0){
+                if(id!=-1){
                     scheduler.cancelTask(id);
                     id=-1;
                     player.closeInventory();
@@ -49,8 +49,8 @@ public class ParticlesGuiListener implements Listener {
                 }
             }else if (e.getCurrentItem().getType()==Material.STRING){
                 if(id!=0){
+                    id = 0;
                     scheduler.runTaskTimer(kings, () -> {
-                        id = 0;
                         Bukkit.getLogger().info("id now is 0");
                         makeSpiralTrail(2, 2, player);
                         Bukkit.getLogger().info("spiral task running");
