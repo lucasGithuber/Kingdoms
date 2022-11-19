@@ -48,16 +48,17 @@ public class ParticlesGuiListener implements Listener {
                     Bukkit.getLogger().info("id now is -1");
                 }
             }else if (e.getCurrentItem().getType()==Material.STRING){
-
-                scheduler.runTaskTimer(kings, () -> {
-                    id = 0;
-                    Bukkit.getLogger().info("id now is 0");
-                    makeSpiralTrail(2, 2, player);
-                    Bukkit.getLogger().info("spiral task running");
-                }, 0L, 5L);
-
+                if(id=0){
+                    scheduler.runTaskTimer(kings, () -> {
+                        id = 0;
+                        Bukkit.getLogger().info("id now is 0");
+                        makeSpiralTrail(2, 2, player);
+                        Bukkit.getLogger().info("spiral task running");
+                    }, 0L, 5L);
                 player.closeInventory();
-            
+                }else{
+                    player.sendMessage("Already Running!");
+                }
             }
         }
     }
